@@ -1,8 +1,4 @@
-// Cerrar sesión
-document.getElementById("logoutBtn").addEventListener("click", function () {
-  localStorage.removeItem("token");
-  window.location.href = "index.html";
-});
+const API_BASE_URL = "https://aimodelflask.onrender.com";
 
 let preguntaActual = null;
 let respuestaActual = 3; // Valor inicial
@@ -22,8 +18,8 @@ async function iniciarPreguntas() {
     });
     if (!response.ok) throw new Error("Error al iniciar preguntas");
     const data = await response.json();
-    // Guardar session_id en sessionStorage
-    sessionStorage.setItem("session_id", data.session_id);
+    // Guardar session_id en localStorage
+    localStorage.setItem("session_id", data.session_id);
     return data.first_question;
   } catch (err) {
     console.error("API error:", err);
@@ -32,7 +28,7 @@ async function iniciarPreguntas() {
 }
 
 async function siguientePregunta() {
-  const sessionId = sessionStorage.getItem("session_id");
+  const sessionId = localStorage.getItem("session_id");
 
   try {
     const response = await fetch(`${API_BASE_URL}/questions/next_question`, {
@@ -52,7 +48,7 @@ async function siguientePregunta() {
 }
 
 async function resultadosPreguntas() {
-  const sessionId = sessionStorage.getItem("session_id");
+  const sessionId = localStorage.getItem("session_id");
   try {
     const response = await fetch(
       `${API_BASE_URL}/questions/result?session_id=${sessionId}`

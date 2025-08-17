@@ -1,3 +1,5 @@
+const API_BASE_URL = "https://aimodelflask.onrender.com";
+
 // Cerrar sesión
 document.getElementById("logoutBtn").addEventListener("click", function () {
   localStorage.removeItem("token");
@@ -19,10 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   carreras.forEach((carrera) => {
     // Calcular compatibilidad (ejemplo simple usando distancia)
-    const compatibilidad = Math.max(
-      0,
-      Math.round((1 - carrera.distancia_vectorial / 2) * 100)
-    );
+    const compatibilidad = Math.round((1 - carrera.distancia_vectorial) * 100);
 
     const col = document.createElement("div");
     col.className = "col-12 col-md-4 d-flex justify-content-center";
@@ -62,22 +61,26 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     // Click en card o pestaña lleva a conocer.html
-    card.addEventListener("click", function (e) {
-      if (window.innerWidth < 768) {
-        if (e.target.closest(".btn-tab")) {
-          window.location.href =
-            "conocer.html?carrera=" + encodeURIComponent(card.dataset.carrera);
-        }
-      } else {
-        window.location.href =
-          "conocer.html?carrera=" + encodeURIComponent(card.dataset.carrera);
-      }
-    });
-    card.querySelector(".btn-tab").addEventListener("click", function (e) {
-      if (window.innerWidth < 768) {
-        window.location.href =
-          "conocer.html?carrera=" + encodeURIComponent(card.dataset.carrera);
-        e.stopPropagation();
+    card.addEventListener("click", async function (e) {
+      e.stopPropagation();
+
+      const carrera = card.dataset.carrera;
+
+      try {
+        const response = await fetch(`${API_BASE_URL}/questions/start`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" }
+        });
+
+        if (!response.ok) throw new Error("Error al iniciar sesión");
+
+        const data = await response.json();
+        localStorage.setItem("session_id", data.session_id);
+
+        window.location.href = "conocer.html?carrera=" + encodeURIComponent(carrera);
+      } catch (err) {
+        console.error(err);
+        alert("No se pudo iniciar la sesión.");
       }
     });
   });
