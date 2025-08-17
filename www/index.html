@@ -1,97 +1,346 @@
 <!-- index.html -->
 <!DOCTYPE html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Inicio de Sesión</title>
-  <link rel="icon" type="image/png" href="img/logoIcon.png">
-  <link rel="stylesheet" href="css/bootstrap/bootstrap.css">
-  <script src="js/bootstrap/bootstrap.js"></script>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Inicio de Sesión</title>
+    <link rel="icon" type="image/png" href="img/logoIcon.png" />
+    <link rel="stylesheet" href="css/bootstrap/bootstrap.css" />
+    <script src="js/bootstrap/bootstrap.js"></script>
 
-  <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css" />
 
-  <script src="js/checkSession.js"></script>
-</head>
-<body>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
 
-  <div class="container d-flex justify-content-center align-items-center vh-100 position-relative">
-    <div class="container d-flex justify-content-center align-items-center vh-100 position-relative">
-      <div class="card shadow-lg rounded-5 p-4" style="max-width: 450px; width: 100%;"
-      id="authCard">
-        <!-- Tabs -->
-        <ul class="nav nav-tabs p-2 border-0" id="authTabs" role="tablist">
-          <li class="nav-item" role="presentation">
-            <button class="nav-link active bg-transparent border-0" id="login-tab" data-bs-toggle="tab" data-bs-target="#login" type="button" role="tab" aria-controls="login" aria-selected="true">
-              Inicio de Sesión
-            </button>
-          </li>
-          <li class="nav-item" role="presentation">
-            <button class="nav-link bg-transparent border-0" id="register-tab" data-bs-toggle="tab" data-bs-target="#register" type="button" role="tab" aria-controls="register" aria-selected="false">
-              Registro
-            </button>
-          </li>
-        </ul>
+    <script src="js/checkSession.js"></script>
+  </head>
+  <body>
+    <div
+      class="container d-flex justify-content-center align-items-center vh-100 position-relative"
+    >
+      <div
+        class="container d-flex justify-content-center align-items-center vh-100 position-relative"
+      >
+        <div
+          class="card shadow-lg rounded-5 p-4"
+          style="max-width: 450px; width: 100%"
+          id="authCard"
+        >
+          <!-- Tabs -->
+          <ul class="nav nav-tabs p-2 border-0" id="authTabs" role="tablist">
+            <li class="nav-item" role="presentation">
+              <button
+                class="nav-link active bg-transparent border-0"
+                id="login-tab"
+                data-bs-toggle="tab"
+                data-bs-target="#login"
+                type="button"
+                role="tab"
+                aria-controls="login"
+                aria-selected="true"
+              >
+                Inicio de Sesión
+              </button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button
+                class="nav-link bg-transparent border-0"
+                id="register-tab"
+                data-bs-toggle="tab"
+                data-bs-target="#register"
+                type="button"
+                role="tab"
+                aria-controls="register"
+                aria-selected="false"
+              >
+                Registro
+              </button>
+            </li>
+          </ul>
 
-        <!-- Tab panes -->
-        <div class="tab-content p-4">
-          <div class="tab-pane fade show active" id="login" role="tabpanel" aria-labelledby="login-tab">
-            <form id="loginForm">
-              <div class="mb-3">
-                <label for="loginEmail" class="form-label">Correo</label>
-                <input type="email" class="form-control rounded-4" id="loginEmail" required aria-required="true" aria-label="Correo electrónico">
-              </div>
-              <div class="mb-3">
-                <label for="loginPassword" class="form-label">Contraseña</label>
-                <input type="password" class="form-control rounded-4" id="loginPassword" required aria-required="true" aria-label="Contraseña">
-              </div>
-              <div class="text-end mb-3">
-                <a href="#" id="recoverLink" class="link-success">¿Olvidaste tu contraseña?</a>
-              </div>
-              <button type="submit" class="btn btn-success w-100 rounded-4">Continuar</button>
-            </form>
-          </div>
+          <!-- Tab panes -->
+          <div class="tab-content p-4">
+            <div
+              class="tab-pane fade show active"
+              id="login"
+              role="tabpanel"
+              aria-labelledby="login-tab"
+            >
+              <form id="loginForm">
+                <div class="mb-3">
+                  <label for="loginEmail" class="form-label">Correo</label>
+                  <input
+                    type="email"
+                    class="form-control rounded-4"
+                    id="loginEmail"
+                    required
+                    aria-required="true"
+                    aria-label="Correo electrónico"
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="loginPassword" class="form-label"
+                    >Contraseña</label
+                  >
+                  <input
+                    type="password"
+                    class="form-control rounded-4"
+                    id="loginPassword"
+                    required
+                    aria-required="true"
+                    aria-label="Contraseña"
+                  />
+                </div>
+                <div class="text-end mb-3">
+                  <a href="#" id="recoverLink" class="link-success"
+                    >¿Olvidaste tu contraseña?</a
+                  >
+                </div>
+                <button type="submit" class="btn btn-success w-100 rounded-4">
+                  Continuar
+                </button>
+              </form>
+            </div>
 
-          <div class="tab-pane fade" id="register" role="tabpanel" aria-labelledby="register-tab">
-            <form id="registerForm">
-              <div class="mb-3">
-                <label for="registerName" class="form-label">Nombre Completo</label>
-                <input type="text" class="form-control rounded-4" id="registerName" required aria-required="true" aria-label="Nombre completo">
-              </div>
-              <div class="mb-3">
-                <label for="registerEmail" class="form-label">Correo</label>
-                <input type="email" class="form-control rounded-4" id="registerEmail" required aria-required="true" aria-label="Correo electrónico">
-              </div>
-              <div class="mb-3">
-                <label for="registerPassword" class="form-label">Contraseña</label>
-                <input type="password" class="form-control rounded-4" id="registerPassword" required aria-required="true" aria-label="Contraseña">
-              </div>
-              <div class="mb-3">
-                <label for="registerPasswordConfirm" class="form-label">Repetir Contraseña</label>
-                <input type="password" class="form-control rounded-4" id="registerPasswordConfirm" required aria-required="true" aria-label="Repetir contraseña">
-              </div>
-              <button type="submit" class="btn btn-success w-100 rounded-4">Registrarse</button>
-            </form>
+            <div
+              class="tab-pane fade"
+              id="register"
+              role="tabpanel"
+              aria-labelledby="register-tab"
+            >
+              <form id="registerForm">
+                <div class="mb-3">
+                  <label for="registerName" class="form-label"
+                    >Nombre Completo</label
+                  >
+                  <input
+                    type="text"
+                    class="form-control rounded-4"
+                    id="registerName"
+                    required
+                    aria-required="true"
+                    aria-label="Nombre completo"
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="registerEmail" class="form-label">Correo</label>
+                  <input
+                    type="email"
+                    class="form-control rounded-4"
+                    id="registerEmail"
+                    required
+                    aria-required="true"
+                    aria-label="Correo electrónico"
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="registerPassword" class="form-label"
+                    >Contraseña</label
+                  >
+                  <input
+                    type="password"
+                    class="form-control rounded-4"
+                    id="registerPassword"
+                    required
+                    aria-required="true"
+                    aria-label="Contraseña"
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="registerPasswordConfirm" class="form-label"
+                    >Repetir Contraseña</label
+                  >
+                  <input
+                    type="password"
+                    class="form-control rounded-4"
+                    id="registerPasswordConfirm"
+                    required
+                    aria-required="true"
+                    aria-label="Repetir contraseña"
+                  />
+                </div>
+                <button type="submit" class="btn btn-success w-100 rounded-4">
+                  Registrarse
+                </button>
+              </form>
+            </div>
           </div>
         </div>
-    </div>
 
-
-    <!-- Card de recuperación de contraseña -->
-    <div id="recoverCard" class="card shadow-lg rounded-5 p-5 mx-auto" style="max-width: 450px; width: 100%; display:none;">
-      <h4 class="mb-3">Recuperar Contraseña</h4>
-      <form id="recoverForm">
-        <div class="mb-3">
-          <label for="recoverEmail" class="form-label">Correo electrónico</label>
-          <input type="email" class="form-control rounded-4" id="recoverEmail" required aria-label="Correo electrónico para recuperación">
+        <!-- Card de recuperación de contraseña -->
+        <div
+          id="recoverCard"
+          class="card shadow-lg rounded-5 p-5 mx-auto"
+          style="max-width: 450px; width: 100%; display: none"
+        >
+          <h4 class="mb-3">Recuperar Contraseña</h4>
+          <form id="recoverForm">
+            <div class="mb-3">
+              <label for="recoverEmail" class="form-label"
+                >Correo electrónico</label
+              >
+              <input
+                type="email"
+                class="form-control rounded-4"
+                id="recoverEmail"
+                required
+                aria-label="Correo electrónico para recuperación"
+              />
+            </div>
+            <button type="submit" class="btn btn-success w-100 mb-2 rounded-4">
+              Enviar enlace
+            </button>
+            <button
+              type="button"
+              class="btn btn-secondary w-100 rounded-4"
+              id="cancelRecover"
+            >
+              Cancelar
+            </button>
+          </form>
         </div>
-        <button type="submit" class="btn btn-success w-100 mb-2 rounded-4">Enviar enlace</button>
-        <button type="button" class="btn btn-secondary w-100 rounded-4" id="cancelRecover">Cancelar</button>
-      </form>
+      </div>
     </div>
-  </div>
-</div>
 
-  <script src="js/auth.js"></script>
-</body>
+    <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js";
+      import {
+        getAuth,
+        createUserWithEmailAndPassword,
+        signInWithEmailAndPassword,
+      } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-auth.js";
+      import {
+        getDatabase,
+        ref,
+        set,
+        get,
+        child,
+      } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-database.js";
+
+      // 🔹 Configuración de Firebase (desde tu consola)
+      const firebaseConfig = {
+        apiKey: "AIzaSyBz0rO-NOyL02-rStibxYWiczdYB2CEPi0",
+        authDomain: "futoco-34470.firebaseapp.com",
+        databaseURL: "https://futoco-34470-default-rtdb.firebaseio.com",
+        projectId: "futoco-34470",
+        storageBucket: "futoco-34470.appspot.com",
+        messagingSenderId: "1033416066950",
+        appId: "1:1033416066950:web:afe1791d2fb21384afce07",
+        measurementId: "G-JC0X0JM4DK",
+      };
+
+      // 🔹 Inicializar Firebase
+      const app = initializeApp(firebaseConfig);
+      const auth = getAuth(app);
+      const db = getDatabase(app);
+
+      // ===== LOGIN =====
+      const loginForm = document.getElementById("loginForm");
+      loginForm.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        const email = document.getElementById("loginEmail").value;
+        const password = document.getElementById("loginPassword").value;
+
+        try {
+          const userCredential = await signInWithEmailAndPassword(
+            auth,
+            email,
+            password
+          );
+          const user = userCredential.user;
+
+          // Obtener datos del usuario en Realtime Database
+          const snapshot = await get(child(ref(db), `usuarios/${user.uid}`));
+          if (!snapshot.exists() || !snapshot.val().activo) {
+            alert("Usuario inactivo o no registrado");
+            return;
+          }
+
+          // Guardar token y uid
+          const token = await user.getIdToken();
+          localStorage.setItem("token", token);
+          localStorage.setItem("uid", user.uid);
+
+          // Redirigir a inicio
+          window.location.href = "inicio.html";
+        } catch (error) {
+          console.error(error);
+          alert("Usuario o contraseña incorrectos");
+        }
+      });
+
+      // ===== REGISTRO =====
+      const registerForm = document.getElementById("registerForm");
+      registerForm.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        const email = document.getElementById("registerEmail").value;
+        const pass = document.getElementById("registerPassword").value;
+        const passConfirm = document.getElementById(
+          "registerPasswordConfirm"
+        ).value;
+        const nombre = document.getElementById("registerName").value;
+
+        if (pass !== passConfirm) {
+          alert("Las contraseñas no coinciden");
+          return;
+        }
+
+        try {
+          // Crear usuario en Firebase Auth
+          const userCredential = await createUserWithEmailAndPassword(
+            auth,
+            email,
+            pass
+          );
+          const user = userCredential.user;
+
+          // Guardar info adicional en Realtime Database
+          await set(ref(db, `usuarios/${user.uid}`), {
+            nombre: nombre,
+            correo: email,
+            esAdmin: false,
+            activo: true,
+          });
+
+          alert("Registro exitoso. Ahora puedes iniciar sesión.");
+
+          // Cambiar automáticamente al tab de login
+          const loginTab = new bootstrap.Tab(
+            document.getElementById("login-tab")
+          );
+          loginTab.show();
+        } catch (error) {
+          console.error(error);
+          alert("Error al registrar: " + error.message);
+        }
+      });
+
+      // ===== RECUPERACIÓN SIMULADA =====
+      const authCard = document.getElementById("authCard");
+      const recoverCard = document.getElementById("recoverCard");
+      const recoverLink = document.getElementById("recoverLink");
+      const cancelRecover = document.getElementById("cancelRecover");
+
+      recoverLink.addEventListener("click", (e) => {
+        e.preventDefault();
+        authCard.style.display = "none";
+        recoverCard.style.display = "block";
+      });
+
+      cancelRecover.addEventListener("click", () => {
+        recoverCard.style.display = "none";
+        authCard.style.display = "block";
+      });
+
+      const recoverForm = document.getElementById("recoverForm");
+      recoverForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const email = document.getElementById("recoverEmail").value;
+        alert(`Se ha enviado un enlace de recuperación a ${email} (simulado)`);
+      });
+    </script>
+  </body>
 </html>
