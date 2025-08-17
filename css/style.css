@@ -1,5 +1,5 @@
 /* Tabs inactivos */
-#authTabs .nav-link {
+#authTabs .nav-link, #conocerTabs .nav-link {
   background: transparent;
   border: none;
   color: gray !important; /* color cuando está inactivo */
@@ -7,7 +7,7 @@
 }
 
 /* Tab activo */
-#authTabs .nav-link.active {
+#authTabs .nav-link.active, #conocerTabs .nav-link.active {
   color: #0e1373 !important; /* color azul cuando activo */
   border-bottom: 2px solid #0e1373 !important; /* subrayado opcional */
 }

@@ -1,3 +1,9 @@
+// Cerrar sesión
+document.getElementById("logoutBtn").addEventListener("click", function () {
+  localStorage.removeItem("token");
+  window.location.href = "index.html";
+});
+
 let preguntaActual = null;
 let respuestaActual = 3; // Valor inicial
 const questionLabel = document.getElementById("questionLabel");
@@ -121,6 +127,9 @@ nextBtn.addEventListener("click", async () => {
 
 saveBtn.addEventListener("click", async () => {
   try {
+    saveBtn.disabled = true;
+    questionLabel.textContent = "Guardando resultados...";
+
     const resultados = await resultadosPreguntas();
     if (resultados && resultados.carreras) {
       localStorage.setItem("carrerasTest", JSON.stringify(resultados.carreras));
@@ -129,6 +138,7 @@ saveBtn.addEventListener("click", async () => {
     } else {
       alert("No se pudieron obtener los resultados.");
     }
+    saveBtn.disabled = false;
   } catch (err) {
     console.error(err);
     alert("Ocurrió un error al obtener resultados.");

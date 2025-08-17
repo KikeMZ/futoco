@@ -4,7 +4,6 @@ document.getElementById("logoutBtn").addEventListener("click", function () {
   window.location.href = "index.html";
 });
 
-
 document.addEventListener("DOMContentLoaded", () => {
   const grid = document.getElementById("cardsGrid");
   grid.innerHTML = ""; // limpiar lo que viene hardcodeado en el HTML
@@ -17,9 +16,6 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   const carreras = JSON.parse(carrerasGuardadas);
-
-  console.log(carreras);
-  
 
   carreras.forEach((carrera) => {
     // Calcular compatibilidad (ejemplo simple usando distancia)
