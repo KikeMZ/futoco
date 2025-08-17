@@ -156,7 +156,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(120deg, rgba(12,16,89,0.13) 60%, rgba(44,44,44,0.18) 100%);
+  background: linear-gradient(
+    120deg,
+    rgba(12, 16, 89, 0.13) 60%,
+    rgba(44, 44, 44, 0.18) 100%
+  );
   color: #0c1059;
   font-weight: 500;
   font-size: 1.2rem;
@@ -171,7 +175,7 @@
 .carrera-card:hover .card-hover-text {
   opacity: 1;
   transform: scale(1.04);
-  box-shadow: 0 8px 32px rgba(12,16,89,0.10);
+  box-shadow: 0 8px 32px rgba(12, 16, 89, 0.1);
 }
 
 /* Porcentaje de compatibilidad */
@@ -185,7 +189,7 @@
   font-weight: 600;
   padding: 0.35em 0.9em;
   border-radius: 0.8em 0.8em 0.8em 0.2em;
-  box-shadow: 0 2px 8px rgba(12,16,89,0.12);
+  box-shadow: 0 2px 8px rgba(12, 16, 89, 0.12);
   z-index: 3;
   letter-spacing: 0.5px;
 }
@@ -210,4 +214,10 @@
   .card-mobile-text {
     display: block !important;
   }
+}
+
+.navbar-brand {
+  height: 92px;
+  max-width: 100px;
+  padding: 0px 0px 0px 20px;
 }
