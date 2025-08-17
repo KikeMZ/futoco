@@ -1,0 +1,74 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Preguntas Complementarias.</title>
+  <link rel="icon" type="image/png" href="img/logoIcon.png">
+  <link rel="stylesheet" href="css/bootstrap/bootstrap.css">
+  <script src="js/bootstrap/bootstrap.js"></script>
+
+  <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+
+  <div class="container d-flex justify-content-center align-items-center vh-100 position-relative">
+    <div class="container d-flex justify-content-center align-items-center vh-100 position-relative">
+      <div class="card shadow-lg rounded-5 p-4"  style="max-width: 450px; width: 100%;"
+      id="authCard">
+        <!-- Tabs -->
+        <ul class="nav nav-tabs p-2 border-0" id="authTabs" role="tablist">
+          <li class="nav-item" role="presentation">
+            <button class="nav-link active bg-transparent border-0" id="login-tab" data-bs-toggle="tab" data-bs-target="#login" type="button" role="tab" aria-controls="login" aria-selected="true">
+              Pregunta x
+            </button>
+          </li>
+          
+        </ul>
+
+        <!-- Tab panes -->
+        <div class="tab-content p-4">
+          <div class="tab-pane fade show active" id="login" role="tabpanel" aria-labelledby="login-tab">
+            <section id="correoSection" class="mb-3">
+              <label class="form-label mb-2" id="pregunta_x">Selecciona una opción:</label>
+              <div class="row mb-3">
+                <div class="col-6 d-grid">
+                  <button type="button" class="btn btn-outline-primary square-btn" id="opcion_1">Opción 1</button>
+                </div>
+                <div class="col-6 d-grid">
+                  <button type="button" class="btn btn-outline-secondary square-btn" id="opcion_2">Opción 2</button>
+                </div>
+              </div>
+              <div class="d-flex justify-content-end mt-3">
+                <button type="button" class="btn btn-success rounded-circle d-flex align-items-center justify-content-center" style="width:48px; height:48px;">
+                  <img src="img/right-arrow-next.svg" alt="Siguiente" style="width:24px; height:24px;">
+                </button>
+              </div>
+            </section>
+          </div>
+
+          
+        </div>
+    </div>
+
+
+    <!-- Card de recuperación de contraseña -->
+    <div id="recoverCard" class="card shadow-lg rounded-5 p-5 mx-auto" style="max-width: 450px; width: 100%; display:none;">
+      <h4 class="mb-3">Recuperar Contraseña</h4>
+      <form id="recoverForm">
+        <div class="mb-3">
+          <label for="recoverEmail" class="form-label">Correo electrónico</label>
+          <input type="email" class="form-control rounded-4" id="recoverEmail" required aria-label="Correo electrónico para recuperación">
+        </div>
+        <button type="submit" class="btn btn-success w-100 mb-2 rounded-4">Enviar enlace</button>
+        <button type="button" class="btn btn-secondary w-100 rounded-4" id="cancelRecover">Cancelar</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+  <script src="js/auth.js"></script>
+</body>
+</html>
