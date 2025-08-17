@@ -2,7 +2,7 @@
 var currentPage = window.location.pathname.split("/").pop();
 
 // Si hay token y no estamos ya en home, redirigimos
-if (localStorage.getItem('token') && currentPage !== 'inicio.html') {
+if (localStorage.getItem('token') && currentPage !== 'inicio.html' && currentPage !== 'test.html') {
   window.location.href = 'inicio.html';
 }
 

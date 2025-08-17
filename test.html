@@ -12,6 +12,27 @@
     <script src="js/checkSession.js"></script>
 </head>
 <body>
-    
+    <div class="container d-flex justify-content-center align-items-center vh-100 position-relative">
+      <div class="card shadow-lg rounded-5 p-4" style="max-width: 450px; width: 100%;">
+        <h4 class="mb-4 text-center">Responde las preguntas</h4>
+        <form id="testForm">
+          <div class="mb-3">
+            <label id="questionLabel" class="form-label"></label>
+            <div class="d-flex align-items-center gap-2">
+              <span class="text-muted small">1</span>
+              <input type="range" class="form-range flex-grow-1" id="answerInput" min="1" max="5" step="1" value="3" required aria-label="Respuesta">
+              <span class="text-muted small">5</span>
+              <span id="answerValue" class="badge bg-secondary ms-2">3</span>
+            </div>
+          </div>
+          <div class="d-flex justify-content-between mb-3">
+            <button type="button" class="btn btn-outline-dark rounded-4 btn-icon" id="prevBtn" title="Anterior">&lt;</button>
+            <button type="button" class="btn btn-outline-dark rounded-4 btn-icon" id="nextBtn" title="Siguiente">&gt;</button>
+          </div>
+          <button type="button" class="btn btn-success w-100 rounded-4" id="saveBtn">Guardar respuestas</button>
+        </form>
+      </div>
+    </div>
+    <script src="js/test.js"></script>
 </body>
 </html>
