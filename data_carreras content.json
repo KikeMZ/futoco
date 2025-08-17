@@ -1,0 +1,142 @@
+[
+    {
+        "nombre": "Ingeniero Civil",
+        "descripcion": "Profesional encargado del diseño, construcción y mantenimiento de infraestructuras como edificios, puentes y carreteras.",
+        "salario": "$18,000 - $40,000 MXN mensuales",
+        "prospecto": "Alta demanda en el sector público y privado, especialmente en proyectos de infraestructura.",
+        "conocimientos prerequisito": "Matemáticas, física, dibujo técnico, gestión de proyectos."
+    },
+    {
+        "nombre": "Médico General",
+        "descripcion": "Profesional de la salud que diagnostica y trata enfermedades comunes, orienta a pacientes y realiza prevención.",
+        "salario": "$20,000 - $50,000 MXN mensuales",
+        "prospecto": "Muy alta demanda en hospitales, clínicas y consultorios privados.",
+        "conocimientos prerequisito": "Biología, química, anatomía, ética médica."
+    },
+    {
+        "nombre": "Abogado",
+        "descripcion": "Especialista en leyes que asesora, representa y defiende a personas o empresas en asuntos legales.",
+        "salario": "$15,000 - $35,000 MXN mensuales",
+        "prospecto": "Demanda estable en despachos, empresas y sector público.",
+        "conocimientos prerequisito": "Derecho, redacción, argumentación, ética profesional."
+    },
+    {
+        "nombre": "Arquitecto",
+        "descripcion": "Profesional que diseña espacios habitables y funcionales, supervisa obras y crea proyectos arquitectónicos.",
+        "salario": "$16,000 - $38,000 MXN mensuales",
+        "prospecto": "Demanda en construcción, diseño urbano y empresas privadas.",
+        "conocimientos prerequisito": "Dibujo, diseño, matemáticas, software CAD."
+    },
+    {
+        "nombre": "Diseñador Gráfico",
+        "descripcion": "Crea piezas visuales para comunicación, publicidad y medios digitales e impresos.",
+        "salario": "$10,000 - $25,000 MXN mensuales",
+        "prospecto": "Demanda creciente en agencias, empresas y freelance.",
+        "conocimientos prerequisito": "Diseño, creatividad, manejo de software gráfico."
+    },
+    {
+        "nombre": "Profesor de Matemáticas",
+        "descripcion": "Imparte clases de matemáticas en distintos niveles educativos, fomenta el pensamiento lógico y analítico.",
+        "salario": "$8,000 - $20,000 MXN mensuales",
+        "prospecto": "Demanda constante en escuelas públicas y privadas.",
+        "conocimientos prerequisito": "Matemáticas, pedagogía, comunicación."
+    },
+    {
+        "nombre": "Psicólogo",
+        "descripcion": "Estudia el comportamiento humano, brinda terapia y orientación psicológica.",
+        "salario": "$12,000 - $30,000 MXN mensuales",
+        "prospecto": "Demanda en clínicas, escuelas y empresas.",
+        "conocimientos prerequisito": "Psicología, comunicación, empatía."
+    },
+    {
+        "nombre": "Enfermero",
+        "descripcion": "Atiende pacientes, administra medicamentos y apoya en procedimientos médicos.",
+        "salario": "$10,000 - $22,000 MXN mensuales",
+        "prospecto": "Alta demanda en hospitales y clínicas.",
+        "conocimientos prerequisito": "Enfermería, biología, ética profesional."
+    },
+    {
+        "nombre": "Periodista",
+        "descripcion": "Investiga, redacta y comunica noticias en medios impresos, digitales y audiovisuales.",
+        "salario": "$9,000 - $22,000 MXN mensuales",
+        "prospecto": "Demanda en medios de comunicación y agencias.",
+        "conocimientos prerequisito": "Comunicación, redacción, investigación."
+    },
+    {
+        "nombre": "Actor",
+        "descripcion": "Interpreta personajes en teatro, cine y televisión.",
+        "salario": "$7,000 - $30,000 MXN mensuales (variable)",
+        "prospecto": "Demanda variable en medios y espectáculos.",
+        "conocimientos prerequisito": "Actuación, expresión corporal, creatividad."
+    },
+    {
+        "nombre": "Economista",
+        "descripcion": "Analiza mercados, asesora en finanzas y políticas económicas.",
+        "salario": "$15,000 - $35,000 MXN mensuales",
+        "prospecto": "Demanda en bancos, empresas y sector público.",
+        "conocimientos prerequisito": "Economía, matemáticas, análisis estadístico."
+    },
+    {
+        "nombre": "Contador",
+        "descripcion": "Gestiona la contabilidad y finanzas de empresas y personas.",
+        "salario": "$12,000 - $28,000 MXN mensuales",
+        "prospecto": "Demanda estable en empresas y despachos.",
+        "conocimientos prerequisito": "Contabilidad, matemáticas, fiscalización."
+    },
+    {
+        "nombre": "Chef",
+        "descripcion": "Prepara y diseña platillos, gestiona cocinas y restaurantes.",
+        "salario": "$10,000 - $25,000 MXN mensuales",
+        "prospecto": "Demanda en restaurantes, hoteles y catering.",
+        "conocimientos prerequisito": "Gastronomía, creatividad, gestión de alimentos."
+    },
+    {
+        "nombre": "Ingeniero en Sistemas",
+        "descripcion": "Desarrolla y mantiene sistemas informáticos y software.",
+        "salario": "$16,000 - $40,000 MXN mensuales",
+        "prospecto": "Alta demanda en empresas tecnológicas y consultorías.",
+        "conocimientos prerequisito": "Programación, lógica, matemáticas, inglés técnico."
+    },
+    {
+        "nombre": "Piloto de Aviación",
+        "descripcion": "Opera aeronaves comerciales y privadas, responsable de la seguridad de vuelo.",
+        "salario": "$30,000 - $80,000 MXN mensuales",
+        "prospecto": "Demanda en aerolíneas y aviación privada.",
+        "conocimientos prerequisito": "Física, matemáticas, inglés, entrenamiento especializado."
+    },
+    {
+        "nombre": "Fotógrafo",
+        "descripcion": "Captura imágenes para medios, publicidad y eventos.",
+        "salario": "$7,000 - $20,000 MXN mensuales (variable)",
+        "prospecto": "Demanda en medios, agencias y freelance.",
+        "conocimientos prerequisito": "Fotografía, creatividad, manejo de equipo."
+    },
+    {
+        "nombre": "Veterinario",
+        "descripcion": "Atiende y previene enfermedades en animales domésticos y de granja.",
+        "salario": "$12,000 - $28,000 MXN mensuales",
+        "prospecto": "Demanda en clínicas, granjas y sector público.",
+        "conocimientos prerequisito": "Biología, medicina veterinaria, ética profesional."
+    },
+    {
+        "nombre": "Ingeniero Mecánico",
+        "descripcion": "Diseña, desarrolla y mantiene maquinaria y sistemas mecánicos.",
+        "salario": "$16,000 - $38,000 MXN mensuales",
+        "prospecto": "Demanda en industria manufacturera y automotriz.",
+        "conocimientos prerequisito": "Matemáticas, física, dibujo técnico, CAD."
+    },
+    {
+        "nombre": "Programador",
+        "descripcion": "Desarrolla software y aplicaciones para distintos dispositivos y plataformas.",
+        "salario": "$15,000 - $40,000 MXN mensuales",
+        "prospecto": "Alta demanda en empresas tecnológicas y startups.",
+        "conocimientos prerequisito": "Programación, lógica, matemáticas, inglés técnico."
+    },
+    {
+        "nombre": "Administrador de Empresas",
+        "descripcion": "Gestiona recursos humanos, financieros y materiales en organizaciones.",
+        "salario": "$14,000 - $32,000 MXN mensuales",
+        "prospecto": "Demanda en empresas de todos los sectores.",
+        "conocimientos prerequisito": "Administración, contabilidad, liderazgo, comunicación."
+    }
+]

@@ -30,9 +30,18 @@ if not API_KEY or not ENDPOINT:
     print("❌ Falta AZURE_OPENAI_API_KEY o AZURE_OPENAI_ENDPOINT en .env")
     sys.exit(1)
 
+# Permite editar el número de preguntas al inicio
+try:
+  NUM_QUESTIONS = int(os.getenv("NUM_QUESTIONS", ""))
+  if NUM_QUESTIONS <= 0:
+    raise ValueError
+except Exception:
+  inp = input("¿Cuántas preguntas quieres generar? [default=5]: ").strip()
+  NUM_QUESTIONS = int(inp) if inp.isdigit() and int(inp) > 0 else 5
 client = AzureOpenAI(api_key=API_KEY, azure_endpoint=ENDPOINT, api_version=API_VERSION)
 
 DIMENSIONS = ["R","I","A","S","E","C"]  # Realista, Investigativo, Artístico, Social, Emprendedor, Convencional
+PROBABILITIES = {d: 0.0 for d in DIMENSIONS}  # Inicialmente 0 en todas las entradas
 
 # ================
 # Util: parseo JSON robusto
@@ -59,7 +68,7 @@ QUESTIONS_WITH_VECTOR_SCHEMA = {
         "explicacion_corta": {"type":"string"},
         "preguntas": {
           "type": "array",
-          "minItems": 20, "maxItems": 20,
+          "minItems": int(NUM_QUESTIONS), "maxItems": int(NUM_QUESTIONS),
           "items": {
             "type": "object",
             "properties": {
@@ -106,9 +115,9 @@ def generar_preguntas_con_vectores() -> List[Dict]:
         "Genera EXACTAMENTE 5 preguntas cortas (10–14 palabras) para un test vocacional RIASEC. "
         "Cada pregunta pertenece a UNA dimensión (R,I,A,S,E,C). Lenguaje claro de bachillerato, "
         "neutral en género y sin tecnicismos. Campos por pregunta: id(1..5), texto, dimension, prob_vector. "
-        "Al crear la PRIMERA pregunta, genera un prob_vector (R,I,A,S,E,C) con suma ~1.0. "
+        "Al crear la PRIMERA pregunta, genera un prob_vector (R,I,A,S,E,C) con probabilidad inicial 0 en todas las entradas. "
         "La SIGUIENTE pregunta debe elegirse EN BASE a ese prob_vector (dimensión con mayor probabilidad o muestreo razonable). "
-        "Después de cada pregunta, actualiza el prob_vector y vuelve a elegir la siguiente, repite hasta la 20. "
+        "Después de cada pregunta, actualiza el prob_vector y vuelve a elegir la siguiente, repite hasta la ultima. "
         "Incluye en cada objeto 'nota_secuencia' una frase breve que explique cómo el vector influyó en la siguiente elección. "
         "Devuelve también 'explicacion_corta' al inicio (1–2 frases) sobre cómo funciona la adaptación."
     )

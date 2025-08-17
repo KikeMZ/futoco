@@ -1,0 +1,222 @@
+[
+    {
+        "nombre": "Ingeniero Civil",
+        "RIASEC": {
+            "R": 0.7,
+            "I": 0.4,
+            "A": 0.2,
+            "S": 0.3,
+            "E": 0.5,
+            "C": 0.6
+        }
+    },
+    {
+        "nombre": "Médico General",
+        "RIASEC": {
+            "R": 0.3,
+            "I": 0.7,
+            "A": 0.2,
+            "S": 0.8,
+            "E": 0.4,
+            "C": 0.5
+        }
+    },
+    {
+        "nombre": "Abogado",
+        "RIASEC": {
+            "R": 0.2,
+            "I": 0.5,
+            "A": 0.3,
+            "S": 0.6,
+            "E": 0.8,
+            "C": 0.6
+        }
+    },
+    {
+        "nombre": "Arquitecto",
+        "RIASEC": {
+            "R": 0.5,
+            "I": 0.4,
+            "A": 0.8,
+            "S": 0.3,
+            "E": 0.4,
+            "C": 0.5
+        }
+    },
+    {
+        "nombre": "Diseñador Gráfico",
+        "RIASEC": {
+            "R": 0.2,
+            "I": 0.4,
+            "A": 0.9,
+            "S": 0.4,
+            "E": 0.3,
+            "C": 0.4
+        }
+    },
+    {
+        "nombre": "Profesor de Matemáticas",
+        "RIASEC": {
+            "R": 0.4,
+            "I": 0.8,
+            "A": 0.3,
+            "S": 0.7,
+            "E": 0.4,
+            "C": 0.5
+        }
+    },
+    {
+        "nombre": "Psicólogo",
+        "RIASEC": {
+            "R": 0.2,
+            "I": 0.6,
+            "A": 0.4,
+            "S": 0.9,
+            "E": 0.5,
+            "C": 0.4
+        }
+    },
+    {
+        "nombre": "Enfermero",
+        "RIASEC": {
+            "R": 0.3,
+            "I": 0.5,
+            "A": 0.2,
+            "S": 0.9,
+            "E": 0.4,
+            "C": 0.6
+        }
+    },
+    {
+        "nombre": "Periodista",
+        "RIASEC": {
+            "R": 0.2,
+            "I": 0.5,
+            "A": 0.7,
+            "S": 0.6,
+            "E": 0.6,
+            "C": 0.4
+        }
+    },
+    {
+        "nombre": "Actor",
+        "RIASEC": {
+            "R": 0.1,
+            "I": 0.3,
+            "A": 0.9,
+            "S": 0.7,
+            "E": 0.6,
+            "C": 0.3
+        }
+    },
+    {
+        "nombre": "Economista",
+        "RIASEC": {
+            "R": 0.4,
+            "I": 0.8,
+            "A": 0.2,
+            "S": 0.5,
+            "E": 0.6,
+            "C": 0.7
+        }
+    },
+    {
+        "nombre": "Contador",
+        "RIASEC": {
+            "R": 0.3,
+            "I": 0.6,
+            "A": 0.2,
+            "S": 0.4,
+            "E": 0.5,
+            "C": 0.9
+        }
+    },
+    {
+        "nombre": "Chef",
+        "RIASEC": {
+            "R": 0.5,
+            "I": 0.4,
+            "A": 0.8,
+            "S": 0.5,
+            "E": 0.4,
+            "C": 0.3
+        }
+    },
+    {
+        "nombre": "Ingeniero en Sistemas",
+        "RIASEC": {
+            "R": 0.6,
+            "I": 0.8,
+            "A": 0.3,
+            "S": 0.3,
+            "E": 0.4,
+            "C": 0.7
+        }
+    },
+    {
+        "nombre": "Piloto de Aviación",
+        "RIASEC": {
+            "R": 0.8,
+            "I": 0.5,
+            "A": 0.3,
+            "S": 0.4,
+            "E": 0.5,
+            "C": 0.6
+        }
+    },
+    {
+        "nombre": "Fotógrafo",
+        "RIASEC": {
+            "R": 0.3,
+            "I": 0.4,
+            "A": 0.9,
+            "S": 0.5,
+            "E": 0.4,
+            "C": 0.3
+        }
+    },
+    {
+        "nombre": "Veterinario",
+        "RIASEC": {
+            "R": 0.5,
+            "I": 0.7,
+            "A": 0.2,
+            "S": 0.8,
+            "E": 0.3,
+            "C": 0.5
+        }
+    },
+    {
+        "nombre": "Ingeniero Mecánico",
+        "RIASEC": {
+            "R": 0.9,
+            "I": 0.7,
+            "A": 0.2,
+            "S": 0.3,
+            "E": 0.4,
+            "C": 0.6
+        }
+    },
+    {
+        "nombre": "Programador",
+        "RIASEC": {
+            "R": 0.6,
+            "I": 0.9,
+            "A": 0.3,
+            "S": 0.2,
+            "E": 0.3,
+            "C": 0.7
+        }
+    },
+    {
+        "nombre": "Administrador de Empresas",
+        "RIASEC": {
+            "R": 0.3,
+            "I": 0.6,
+            "A": 0.2,
+            "S": 0.5,
+            "E": 0.8,
+            "C": 0.7
+        }
+    }
+]
