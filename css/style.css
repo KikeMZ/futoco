@@ -1,0 +1,15 @@
+/* Tabs inactivos */
+#authTabs .nav-link {
+  background: transparent;
+  border: none;
+  color: gray !important; /* color cuando está inactivo */
+  font-weight: 500;
+}
+
+/* Tab activo */
+#authTabs .nav-link.active {
+  color: #284d99 !important; /* color azul cuando activo */
+  border-bottom: 2px solid #284d99 !important; /* subrayado opcional */
+}
+
+
